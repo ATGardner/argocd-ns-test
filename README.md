@@ -1,7 +1,7 @@
 # test multiple argo-cd instances on the same cluster
 
 this repo is not fully baked. it's just for playing around with that setup.
-in order to try it yourself - change the NAME export in the script.sh file between argocd1 and argocd2, and then run the commands.
+in order to try it yourself - change the NAME export in the script.sh file between argocd1 and argocd2, and the CONTEXST to the name of the k8s you are installing on, and then run the commands.
 they will
 1. install a namespaced argocd instance in ${NAME} namespace
 2. add the "in-cluster" cluster as a remote cluster (to add the missing rbac rules)
