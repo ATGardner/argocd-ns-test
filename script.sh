@@ -1,12 +1,11 @@
 #!/bin/bash
 
-export NAME=argocd2
+export NAME=argocd1
 helm upgrade ${NAME} \
     --install \
     -n ${NAME} \
     --create-namespace \
-    --set createClusterRoles="false" \
-    --set crds.install="false" \
+    -f values.yaml \
     oci://ghcr.io/argoproj/argo-helm/argo-cd
 
 export PASSWORD=$(kubectl -n ${NAME} get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)

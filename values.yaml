@@ -1,0 +1,7 @@
+createClusterRoles: false
+crds:
+  install: false
+
+configs:
+  cm:
+    application.resourceTrackingMethod: annotation+label
