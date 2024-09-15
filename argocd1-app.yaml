@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ATGardner/argocd-ns-test.git
+    targetRevision: main
+    path: argocd1
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd1
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
