@@ -10,7 +10,7 @@ spec:
     path: child
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd1
+    namespace: argocd2
   syncPolicy:
     automated:
       allowEmpty: true
