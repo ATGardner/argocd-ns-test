@@ -7,6 +7,7 @@ helm upgrade ${NAME} \
     -n ${NAME} \
     --create-namespace \
     -f values.yaml \
+    --kube-context ${CONTEXT} \
     oci://ghcr.io/argoproj/argo-helm/argo-cd
 
 export PASSWORD=$(kubectl -n ${NAME} get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
